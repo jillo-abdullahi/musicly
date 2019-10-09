@@ -6,9 +6,15 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import genreReducer from './store/reducers/genreReducer';
+import albumReducer from './store/reducers/albumReducer';
+import artistsReducer from './store/reducers/artistsReducer';
+import songsReducer from './store/reducers/songsReducer';
 
 const rootReducer = combineReducers({
-    genres: genreReducer
+    genres: genreReducer,
+    allSongs: songsReducer,
+    allAlbums: albumReducer,
+    allArtists: artistsReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

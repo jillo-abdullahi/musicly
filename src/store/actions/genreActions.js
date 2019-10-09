@@ -20,7 +20,7 @@ export const getGenres = () => {
             dispatch(getGenresSuccess(documents));
         })
         .catch(err => {
-            console.log('Error getting documents', err);
+            dispatch(getGenresFailure(err));
         });
 
 

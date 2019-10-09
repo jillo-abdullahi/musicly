@@ -6,7 +6,9 @@ import AlbumsArtistsSongs from './AlbumsArtistsSongs';
 import Footer from './footer';
 import Cart from './Cart';
 import getGenres from '../store/actions/genreActions';
-import { faDivide } from '@fortawesome/free-solid-svg-icons';
+import getSongs from '../store/actions/songsAction';
+import getAlbums from '../store/actions/albumsAction';
+import getArtists from '../store/actions/artistsAction';
 
 class Main extends Component {
 
@@ -15,7 +17,10 @@ class Main extends Component {
   }
 
   getMusic = () => {
-    this.props.getMusic();
+    this.props.getGenres();
+    this.props.getSongs();
+    this.props.getAlbums();
+    this.props.getArtists()
   }
   render(){
 
@@ -33,7 +38,10 @@ class Main extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getMusic: () => dispatch(getGenres())
+        getGenres: () => dispatch(getGenres()),
+        getAlbums: () => dispatch(getAlbums()),
+        getArtists: () => dispatch(getArtists()),
+        getSongs: () => dispatch(getSongs()),
     }
 }
 
