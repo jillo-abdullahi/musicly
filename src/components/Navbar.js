@@ -15,8 +15,6 @@ class Landing extends Component {
   }
 
   classToggle = () => this.setState({ toggleMenu: !this.state.toggleMenu });
-  viewCart = () => { this.props.history.push('/cart'); }
-
   render(){
     const { toggleMenu } = this.state;
     const { cart }= this.props;
@@ -32,7 +30,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className={ toggleMenu ? 'navbar-toggle-show navbar-item-right' : 'navbar-item navbar-item-right' }>
-          <div className="nav_link" onClick={() => this.viewCart()}>
+          <div className="nav_link">
               <Link to="/cart">
                 <div className="cart">
                   <FontAwesomeIcon icon={ faShoppingCart }></FontAwesomeIcon>
