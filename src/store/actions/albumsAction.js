@@ -17,7 +17,6 @@ export const getAlbums = () => {
             snapshot.forEach(doc => {
                 documents.push(doc.data())
             });
-            console.log(documents)
             dispatch(getAlbumsSuccess(documents));
         })
         .catch(err => {

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import { addItemToCart } from '../store/actions/cartAction';
+
 class AlbumsArtistsSongs extends Component {
 
     addToCart = (itemPrice, itemName) => {
@@ -12,8 +14,10 @@ class AlbumsArtistsSongs extends Component {
             name: itemName,
             price: itemPrice
         }
+        const { addItemToCart } = this.props;
         db.collection('cart').doc(itemName).set(data)
         .then(res => {
+            addItemToCart({ name: itemName, price: itemPrice});
             toast.warning('Yay! added to cart', {
                 position: "bottom-center",
                 autoClose: 2000,
@@ -131,4 +135,11 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(AlbumsArtistsSongs);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addItemToCart: (item) => dispatch(addItemToCart(item))
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumsArtistsSongs);

@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux';
+import getCart from '../store/actions/cartAction';
+
 
 class Landing extends Component {
   state = {
-    toggleMenu: false,
-    toggleCart: false
+    toggleMenu: false
+  }
+
+  componentDidMount(){
+    this.props.getCart();
   }
 
   classToggle = () => this.setState({ toggleMenu: !this.state.toggleMenu });
-  toggleCart = () => this.setState({ toggleCart: !this.state.toggleCart});
+  viewCart = () => { this.props.history.push('/cart'); }
 
   render(){
     const { toggleMenu } = this.state;
+    const { cart }= this.props;
 
     return (
       <div className="nav-bar">
@@ -25,13 +33,13 @@ class Landing extends Component {
           </div>
         </div>
         <div className={ toggleMenu ? 'navbar-toggle-show navbar-item-right' : 'navbar-item navbar-item-right' }>
-          <div className="nav_link">
-            <a href="#cart">
-              <div className="cart">
-                <FontAwesomeIcon icon={ faShoppingCart }></FontAwesomeIcon>
-                <span>1</span>
-              </div>
-            </a>
+          <div className="nav_link" onclick={() => this.viewCart()}>
+              <Link to="/cart">
+                <div className="cart">
+                  <FontAwesomeIcon icon={ faShoppingCart }></FontAwesomeIcon>
+                  <span>{cart.cart.length}</span>
+                </div>
+              </Link>
           </div>
         </div>
 
@@ -41,4 +49,14 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+const mapStateToProps = (state) => ({
+  cart: state.cartItems
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+      getCart: () => dispatch(getCart())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);

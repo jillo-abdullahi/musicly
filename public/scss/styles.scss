@@ -42,6 +42,7 @@ html {
   }
 
   .brand-logo {
+    color: $textAndIcons;
     font-size: 2.3rem;
 
     span {
@@ -99,7 +100,7 @@ html {
 
 
 // Header section.
-header {
+.landing {
   height: 800px;
   width: 100%;
   color: $textAndIcons;
@@ -112,7 +113,7 @@ header {
   box-shadow: 0px 7px 13px 0px rgba(0,0,0,0.75);
 
   .intro-text {
-    margin-top: 6rem;
+    padding-top: 3rem;
   }
 
   .featured {
@@ -281,6 +282,91 @@ header {
     }
   }
 }
+
+// shopping cart page
+.my-cart {
+  width: 100%;
+  position: relative;
+  .cart-container{
+    margin-top: 20px;
+    background-color: $primaryText;
+    width: 50%;
+
+    .cart-table {
+      text-align: center;
+
+      td, th {
+        text-align: center;
+        color: $textAndIcons;
+      }
+
+      .remove-item-btn{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        background: red;
+        border: none;
+        border-radius: 50%;
+      }
+    }
+
+    .cart-header {
+      padding: 10px;
+
+    }
+
+    .cart-total {
+        width: 100%;
+        color: $textAndIcons;
+        font-size: 1.6rem;
+        border-top: 1px solid $accentColor;
+        border-bottom: 1px solid $accentColor;
+        padding: 20px;
+        background: darken($primaryText, 10%);
+        display: flex;
+        .cart-subtotal {
+          margin-left: auto;
+        }
+    }
+
+    .cart-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+
+        .checkout-btn {
+          button {
+            background: $accentColor;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+              transform: scale(1.02)
+            }
+          }
+        }
+
+        .continue-shopping-btn {
+          button {
+            background: darken($accentColor, 10%);
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+              transform: scale(1.02)
+            }
+          }
+        }
+    }
+  }
+}
+
 
 footer {
   display: flex !important;

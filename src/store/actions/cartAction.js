@@ -1,9 +1,13 @@
-import { db } from '../../config/firebaseConfig';
+import {
+    db
+} from '../../config/firebaseConfig';
 import {
     GET_CART_STARTED,
     GET_CART_SUCCESS,
-    GET_CART_FAILURE
-} from '../reducers/artistsReducer';
+    GET_CART_FAILURE,
+    REMOVE_FROM_CART,
+    ADD_TO_CART
+} from '../reducers/cartReducer';
 
 
 export const getCart = () => {
@@ -12,20 +16,30 @@ export const getCart = () => {
         dispatch(getCartStarted());
         let cartRef = db.collection('cart');
         cartRef.get()
-        .then(snapshot => {
-            let documents = [];
-            snapshot.forEach(doc => {
-                documents.push(doc.data())
+            .then(snapshot => {
+                let documents = [];
+                snapshot.forEach(doc => {
+                    documents.push(doc.data())
+                });
+                dispatch(getCartSuccess(documents));
+            })
+            .catch(err => {
+                dispatch(getCartFailure(err));
             });
-            dispatch(getCartSuccess(documents));
-        })
-        .catch(err => {
-            dispatch(getCartFailure(err));
-        });
 
 
     }
 };
+
+export const removeItemFromCart = (payload) => ({
+    type: REMOVE_FROM_CART,
+    payload
+})
+
+export const addItemToCart = (payload) => ({
+    type: ADD_TO_CART,
+    payload
+})
 
 const getCartStarted = () => ({
     type: GET_CART_STARTED

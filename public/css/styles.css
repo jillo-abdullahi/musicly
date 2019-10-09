@@ -30,6 +30,7 @@ html {
       .nav-bar .nav_link a:hover {
         color: #FFC107; }
   .nav-bar .brand-logo {
+    color: #FFFFFF;
     font-size: 2.3rem; }
     .nav-bar .brand-logo span {
       color: #FFC107;
@@ -77,7 +78,7 @@ html {
     font-size: 1rem;
     color: #FFFFFF; }
 
-header {
+.landing {
   height: 800px;
   width: 100%;
   color: #FFFFFF;
@@ -88,9 +89,9 @@ header {
   -webkit-box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75); }
-  header .intro-text {
-    margin-top: 6rem; }
-  header .featured {
+  .landing .intro-text {
+    padding-top: 3rem; }
+  .landing .featured {
     width: 100%;
     margin-top: 1.5rem;
     text-align: center; }
@@ -240,6 +241,75 @@ header {
         transition: all .3s ease-in-out; }
         .main_music .album-content .album-buttons button:hover {
           background-color: #ba8b00; }
+
+.my-cart {
+  width: 100%;
+  position: relative; }
+  .my-cart .cart-container {
+    margin-top: 20px;
+    background-color: #212121;
+    width: 50%; }
+    .my-cart .cart-container .cart-table {
+      text-align: center; }
+      .my-cart .cart-container .cart-table td, .my-cart .cart-container .cart-table th {
+        text-align: center;
+        color: #FFFFFF; }
+      .my-cart .cart-container .cart-table .remove-item-btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        background: red;
+        border: none;
+        border-radius: 50%; }
+    .my-cart .cart-container .cart-header {
+      padding: 10px; }
+    .my-cart .cart-container .cart-total {
+      width: 100%;
+      color: #FFFFFF;
+      font-size: 1.6rem;
+      border-top: 1px solid #FFC107;
+      border-bottom: 1px solid #FFC107;
+      padding: 20px;
+      background: #080808;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .my-cart .cart-container .cart-total .cart-subtotal {
+        margin-left: auto; }
+    .my-cart .cart-container .cart-buttons {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 20px; }
+      .my-cart .cart-container .cart-buttons .checkout-btn button {
+        background: #FFC107;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        text-transform: uppercase;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out; }
+        .my-cart .cart-container .cart-buttons .checkout-btn button:hover {
+          -webkit-transform: scale(1.02);
+          -ms-transform: scale(1.02);
+          transform: scale(1.02); }
+      .my-cart .cart-container .cart-buttons .continue-shopping-btn button {
+        background: #d39e00;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        text-transform: uppercase;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out; }
+        .my-cart .cart-container .cart-buttons .continue-shopping-btn button:hover {
+          -webkit-transform: scale(1.02);
+          -ms-transform: scale(1.02);
+          transform: scale(1.02); }
 
 footer {
   display: -webkit-box !important;

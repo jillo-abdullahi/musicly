@@ -10,6 +10,7 @@ import getSongs from '../store/actions/songsAction';
 import getAlbums from '../store/actions/albumsAction';
 import getArtists from '../store/actions/artistsAction';
 
+
 class Main extends Component {
 
   componentDidMount(){
@@ -25,13 +26,12 @@ class Main extends Component {
   render(){
 
     return (
-      <main>
+      <div>
         <Landing />
-        <Cart />
         <Genres />
         <AlbumsArtistsSongs/ >
         <Footer/>
-      </main>
+      </div>
     )
   }
 }
@@ -41,7 +41,7 @@ const mapDispatchToProps = dispatch => {
         getGenres: () => dispatch(getGenres()),
         getAlbums: () => dispatch(getAlbums()),
         getArtists: () => dispatch(getArtists()),
-        getSongs: () => dispatch(getSongs()),
+        getSongs: () => dispatch(getSongs())
     }
 }
 
