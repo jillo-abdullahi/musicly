@@ -11,7 +11,7 @@ export const getGenres = () => {
 
         dispatch(getGenresStarted());
         let genresRef = db.collection('genres');
-        let allGenres = genresRef.get()
+        genresRef.get()
         .then(snapshot => {
             let documents = [];
             snapshot.forEach(doc => {

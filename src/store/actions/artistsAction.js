@@ -11,7 +11,7 @@ export const getArtists = () => {
 
         dispatch(getArtistsStarted());
         let artistsRef = db.collection('artists');
-        let allArtists = artistsRef.get()
+        artistsRef.get()
         .then(snapshot => {
             let documents = [];
             snapshot.forEach(doc => {

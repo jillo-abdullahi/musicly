@@ -32,7 +32,7 @@ class Landing extends Component {
           </div>
         </div>
         <div className={ toggleMenu ? 'navbar-toggle-show navbar-item-right' : 'navbar-item navbar-item-right' }>
-          <div className="nav_link" onclick={() => this.viewCart()}>
+          <div className="nav_link" onClick={() => this.viewCart()}>
               <Link to="/cart">
                 <div className="cart">
                   <FontAwesomeIcon icon={ faShoppingCart }></FontAwesomeIcon>

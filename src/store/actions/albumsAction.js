@@ -11,7 +11,7 @@ export const getAlbums = () => {
 
         dispatch(getAlbumsStarted());
         let albumsRef = db.collection('albums');
-        let allAlbums = albumsRef.get()
+        albumsRef.get()
         .then(snapshot => {
             let documents = [];
             snapshot.forEach(doc => {

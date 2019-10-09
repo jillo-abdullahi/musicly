@@ -4,7 +4,6 @@ import Landing from '../components/Landing';
 import Genres from './genres';
 import AlbumsArtistsSongs from './AlbumsArtistsSongs';
 import Footer from './footer';
-import Cart from './Cart';
 import getGenres from '../store/actions/genreActions';
 import getSongs from '../store/actions/songsAction';
 import getAlbums from '../store/actions/albumsAction';

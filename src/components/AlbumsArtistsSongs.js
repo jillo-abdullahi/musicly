@@ -81,7 +81,7 @@ class AlbumsArtistsSongs extends Component {
                 return (
                     <div className="songs-content">
                         <div className="player">
-                            <iframe src={song.url} style={{width: '100%'}} height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <iframe src={song.url} style={{width: '100%'}} height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                         </div>
                         <div className="buttons">
                             <button onClick={() => this.addToCart(song.price, song.title)}><FontAwesomeIcon icon={ faCartPlus }></FontAwesomeIcon></button>

@@ -1,5 +1,3 @@
-import { debug } from "util";
-
 export const GET_CART_STARTED = 'GET_CART_STARTED';
 export const GET_CART_SUCCESS = 'GET_CART_SUCCESS';
 export const GET_CART_FAILURE = 'GET_CART_FAILURE';
