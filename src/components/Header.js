@@ -14,13 +14,13 @@ const Header = () => {
             <div className="featured">
               <div className="row">
                 <div className="col s12 m4">
-                  <iframe src="https://open.spotify.com/embed/track/1c0hsvHLELX6y8qymnpLKL" width="250" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  <iframe src="https://open.spotify.com/embed/track/1c0hsvHLELX6y8qymnpLKL" width="250" height="330" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
                 <div className="col s12 m4">
-                  <iframe src="https://open.spotify.com/embed/track/5Z01UMMf7V1o0MzF86s6WJ" width="250" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  <iframe src="https://open.spotify.com/embed/track/5Z01UMMf7V1o0MzF86s6WJ" width="250" height="330" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
                 <div className="col s12 m4">
-                  <iframe src="https://open.spotify.com/embed/track/0I6rPjtBatbnqWzqvQhvp4" width="250" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  <iframe src="https://open.spotify.com/embed/track/0I6rPjtBatbnqWzqvQhvp4" width="250" height="330" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
               </div>
             </div>

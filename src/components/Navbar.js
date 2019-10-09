@@ -4,10 +4,12 @@ import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 class Landing extends Component {
   state = {
-    toggleMenu: false
+    toggleMenu: false,
+    toggleCart: false
   }
 
   classToggle = () => this.setState({ toggleMenu: !this.state.toggleMenu });
+  toggleCart = () => this.setState({ toggleCart: !this.state.toggleCart});
 
   render(){
     const { toggleMenu } = this.state;
