@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Francois+One&display=swap");
 body, html {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background-color: #000; }
+
+html {
+  scroll-behavior: smooth; }
 
 .nav-bar {
   display: -webkit-box;
@@ -64,16 +68,17 @@ body, html {
 
 .cart {
   color: #FFC107;
+  font-size: 2.3rem;
   position: relative; }
   .cart span {
     position: absolute;
-    bottom: -2px;
-    left: -2px;
-    font-size: .6rem;
-    color: #212121; }
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
+    color: #FFFFFF; }
 
 header {
-  height: 80vh;
+  height: 800px;
   width: 100%;
   color: #FFFFFF;
   background-image: url("/images/bg.png");
@@ -118,3 +123,135 @@ header {
       -webkit-transform-origin: center;
       -ms-transform-origin: center;
       transform-origin: center; }
+
+.section-title {
+  text-align: center;
+  color: #FFFFFF; }
+
+.divider {
+  width: 60px;
+  border: 1px solid #FFC107; }
+
+.genres {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .genres .genre-item {
+    width: 100px;
+    color: #FFFFFF;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 2px solid #212121;
+    padding: 2px 10px;
+    margin: 10px; }
+
+.main_music {
+  height: 500px;
+  overflow: scroll;
+  padding: 10px;
+  background-color: #212121;
+  -webkit-box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 7px 13px 0px rgba(0, 0, 0, 0.75); }
+  .main_music .songs-content {
+    position: relative;
+    margin-bottom: 10px; }
+    .main_music .songs-content .buttons {
+      position: absolute;
+      right: 0;
+      top: 0; }
+      .main_music .songs-content .buttons button {
+        font-size: 22px;
+        cursor: pointer;
+        border: none;
+        background-color: #FFC107;
+        border-radius: 0 0 0 0.5rem;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out; }
+        .main_music .songs-content .buttons button:hover {
+          background-color: #ba8b00; }
+    .main_music .songs-content .song-price {
+      position: absolute;
+      top: 0;
+      right: 50px;
+      color: #FFFFFF; }
+  .main_music .artist-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px; }
+    .main_music .artist-content .artist-image {
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      border: 1px solid #FFC107; }
+      .main_music .artist-content .artist-image img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%; }
+    .main_music .artist-content .artist-details {
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+      margin-left: 35px;
+      font-size: 1.2rem;
+      color: #FFFFFF; }
+  .main_music .album-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100px;
+    background-image: -webkit-gradient(linear, right top, left top, from(#3e2723), to(#795548));
+    background-image: -webkit-linear-gradient(right, #3e2723, #795548);
+    background-image: -o-linear-gradient(right, #3e2723, #795548);
+    background-image: linear-gradient(to left, #3e2723, #795548); }
+    .main_music .album-content .album-art img {
+      height: 100px;
+      width: 100px; }
+    .main_music .album-content .album-details {
+      color: #FFFFFF;
+      margin-left: 15px; }
+      .main_music .album-content .album-details .title {
+        font-weight: 700; }
+      .main_music .album-content .album-details .album-price {
+        margin-top: 10px; }
+    .main_music .album-content .album-buttons {
+      margin-left: auto; }
+      .main_music .album-content .album-buttons button {
+        font-size: 22px;
+        cursor: pointer;
+        border: none;
+        background-color: #FFC107;
+        border-radius: 0 0 0 0.5rem;
+        -webkit-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out; }
+        .main_music .album-content .album-buttons button:hover {
+          background-color: #ba8b00; }
+
+footer {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
+  color: #FFFFFF;
+  background-color: #141410; }

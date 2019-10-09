@@ -3,20 +3,14 @@ import Navbar from './Navbar';
 
 const Header = () => {
 
-    const content = [
-      {title: "The Lost World", description: "This world is lost", image: '/images/bg.jpg', button: 'DISCOVER'},
-      {title: "The Lost World", description: "This world is lost", image: '/images/bg.jpg', button: 'DISCOVER'},
-      {title: "The Lost World", description: "This world is lost", image: '/images/bg.jpg', button: 'DISCOVER'},
-    ]
-
     return (
         <header>
           <Navbar />
           <div className="container intro-text">
-            <h2>Discover real music.</h2>
+            <h2>Discover music you'll love.</h2>
             <p>Find the latest and greatest here.</p>
             <div className="button_landing"><a href="#browse">find music</a></div>
-            <h5>Featured new music:</h5>
+            <h5>Featured new music</h5>
             <div className="featured">
               <div className="row">
                 <div className="col s12 m4">

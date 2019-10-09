@@ -21,14 +21,8 @@ class Landing extends Component {
           <div className="nav_link nav-toggle" onClick={this.classToggle}>
             <FontAwesomeIcon icon={ faBars }></FontAwesomeIcon>
           </div>
-        </div>          
+        </div>
         <div className={ toggleMenu ? 'navbar-toggle-show navbar-item-right' : 'navbar-item navbar-item-right' }>
-          <div className="nav_link">
-            <a href="#albums">Albums</a>
-          </div>
-          <div className="nav_link">
-            <a href="#albums">Artists</a>
-          </div>
           <div className="nav_link">
             <a href="#cart">
               <div className="cart">
