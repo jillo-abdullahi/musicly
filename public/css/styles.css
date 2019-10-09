@@ -29,10 +29,10 @@ html {
       transition: all .3s ease-in-out; }
       .nav-bar .nav_link a:hover {
         color: #FFC107; }
-  .nav-bar .brand-logo {
+  .nav-bar .brand-logo a {
     color: #FFFFFF;
     font-size: 2.3rem; }
-    .nav-bar .brand-logo span {
+    .nav-bar .brand-logo a span {
       color: #FFC107;
       font-weight: 700; }
   .nav-bar .nav-toggle {

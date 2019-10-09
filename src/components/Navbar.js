@@ -5,7 +5,6 @@ import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux';
 import getCart from '../store/actions/cartAction';
 
-
 class Landing extends Component {
   state = {
     toggleMenu: false
@@ -26,7 +25,7 @@ class Landing extends Component {
       <div className="nav-bar">
         <div className="navbar-item navbar-item-left">
           <div className="nav_link brand-logo">
-              Musicly<span>.</span>
+            <Link to="/">Musicly<span>.</span></Link>
           </div>
           <div className="nav_link nav-toggle" onClick={this.classToggle}>
             <FontAwesomeIcon icon={ faBars }></FontAwesomeIcon>

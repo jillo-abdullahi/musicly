@@ -42,12 +42,14 @@ html {
   }
 
   .brand-logo {
-    color: $textAndIcons;
-    font-size: 2.3rem;
+    a {
+      color: $textAndIcons;
+      font-size: 2.3rem;
 
     span {
       color: $accentColor;
       font-weight: 700;
+    }
     }
   }
 
