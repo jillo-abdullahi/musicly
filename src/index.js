@@ -9,12 +9,14 @@ import genreReducer from './store/reducers/genreReducer';
 import albumReducer from './store/reducers/albumReducer';
 import artistsReducer from './store/reducers/artistsReducer';
 import songsReducer from './store/reducers/songsReducer';
+import cartReducer from './store/reducers/cartReducer';
 
 const rootReducer = combineReducers({
     genres: genreReducer,
     allSongs: songsReducer,
     allAlbums: albumReducer,
-    allArtists: artistsReducer
+    allArtists: artistsReducer,
+    cartItems: cartReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,8 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { db } from '../config/firebaseConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 class AlbumsArtistsSongs extends Component {
+
+    addToCart = (itemPrice, itemName) => {
+        let data = {
+            name: itemName,
+            price: itemPrice
+        }
+        db.collection('cart').doc(itemName).set(data)
+        .then(res => {
+            toast.warning('Yay! added to cart', {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+                });
+        })
+        .catch(err =>{
+            toast.error('Something went wrong! Try again', {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+                });
+        });
+    }
     render() {
 
         const { artists, songs, albums } = this.props
@@ -23,7 +54,7 @@ class AlbumsArtistsSongs extends Component {
                             <div className="album-price">$<span>{album.price}</span></div>
                         </div>
                         <div className="album-buttons">
-                            <button><FontAwesomeIcon icon={ faCartPlus }></FontAwesomeIcon></button>
+                            <button onClick={() => this.addToCart(album.price, album.title)}><FontAwesomeIcon icon={ faCartPlus }></FontAwesomeIcon></button>
                         </div>
                     </div>
                 )
@@ -49,7 +80,7 @@ class AlbumsArtistsSongs extends Component {
                             <iframe src={song.url} style={{width: '100%'}} height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                         </div>
                         <div className="buttons">
-                            <button><FontAwesomeIcon icon={ faCartPlus }></FontAwesomeIcon></button>
+                            <button onClick={() => this.addToCart(song.price, song.title)}><FontAwesomeIcon icon={ faCartPlus }></FontAwesomeIcon></button>
                         </div>
                         <div className="song-price"><span>$</span>{song.price}</div>
                     </div>
@@ -75,7 +106,17 @@ class AlbumsArtistsSongs extends Component {
                         { artistsContent }
                     </div>
                 </div>
-
+                <ToastContainer
+                    position="bottom-center"
+                    autoClose={1000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnVisibilityChange
+                    draggable
+                    pauseOnHover
+                    />
             </div>
         )
     }
